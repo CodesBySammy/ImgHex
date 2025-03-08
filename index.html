@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image & Hex Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Image to Hex Converter</h2>
+        <input type="file" id="imageInput" multiple accept="image/*" onchange="previewImages()">
+        <div id="selectAllContainer" class="hidden">
+            <input type="checkbox" id="selectAllImages" onclick="toggleSelectAllImages()"> Select All
+        </div>
+        <div class="image-container" id="previewContainer"></div>
+        <button class="btn" onclick="convertToHex()">Convert Selected to Hex</button>
+        <div id="hexOutput"></div>
+
+        <h2>Hex to Image Converter</h2>
+        <div id="hexInputs">
+            <textarea class="hexInput" placeholder="Paste hex code here..."></textarea>
+        </div>
+        <button class="btn" onclick="addHexInput()">Add Another Hex</button>
+        <button class="btn" onclick="convertToImages()">Convert to Images</button>
+        <div id="selectAllHexContainer" class="hidden">
+            <input type="checkbox" id="selectAll" onclick="toggleSelectAll()"> Select All
+        </div>
+        <div class="image-container" id="outputImages"></div>
+        <button class="btn" onclick="downloadSelectedImages()">Download Selected Images</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
